@@ -31,13 +31,9 @@
     <input type="button" id="timerbutton" value="スタート" onclick="cntStart()">
     <input type="button" id="timerbutton" value="ストップ" onclick="cntStop()">
     <input type="button" id="timerbutton" value="リセット" onclick="resetbutton()">
-  </form>
-  <audio id="tts">
-    <source src="https://r6---sn-oguesnzd.googlevideo.com/videoplayback?clen=4342789&mime=video%2Fmp4&sparams=clen,dur,ei,expire,gir,id,ip,ipbits,itag,lmt,mime,mip,mm,mn,ms,mv,pl,ratebypass,requiressl,source&ipbits=0&c=WEB&pl=24&ip=96.126.127.100&ei=rvqyW5DRNYWRDq3irqgE&id=o-AJSgz1tixzBZDRfrXqlsW5TeATMAnF8CaiSOrKFnY2Zw&expire=1538477839&itag=18&ratebypass=yes&fvip=6&requiressl=yes&lmt=1489303765536222&source=youtube&dur=76.300&gir=yes&key=cms1&signature=4E213C1F27E2C4E0128CF2D247A07F6637AEB042.7317D9A0F62C453A4E84BECE81757232E0201DB0&title=%E3%80%90%E9%AD%94%E7%8E%8B%E9%AD%82%E5%85%AC%E5%BC%8F%E3%80%91%E3%83%95%E3%83%AA%E3%83%BCBGM%E7%B4%A0%E6%9D%90%20%E3%83%8D%E3%82%AA%E3%83%AD%E3%83%83%E3%82%AF81%E3%80%8E%E7%8B%99%E6%92%83%E6%89%8B%E3%81%AE%E8%91%9B%E8%97%A4%E3%80%8F&redirect_counter=1&cm2rm=sn-q4feel7e&fexp=23763041,23763603&req_id=1605fd6dfc38a3ee&cms_redirect=yes&mip=118.238.207.243&mm=34&mn=sn-oguesnzd&ms=ltu&mt=1538455187&mv=u">
-  </audio>
-
+  </form> 
+  
   <script>
-    document.getElementById("tts").load();
     var timer1;
 
     //カウントダウン関数を1000ミリ秒毎に呼び出す関数
@@ -53,7 +49,6 @@
       document.timer.elements[0].disabled = false;
       document.timer.elements[1].disabled = false;
       document.timer.elements[2].disabled = false;
-      clearInterval(timer1);
     }
 
     //カウントダウン関数
@@ -79,10 +74,9 @@
     function tmWrite(int) {
       int = parseInt(int);
       if (int <= 0) {
-        document.getElementById("tts").play();
+        alert("時間です！音楽はOFFボタンで止めてください");
+        timerMusic.play();
         reSet();
-        alert("時間です！");
-        
       } else {
         //残り分数はintを60で割って切り捨てる
         document.timer.elements[0].value = Math.floor(int / 60);
@@ -97,6 +91,8 @@
       document.timer.elements[1].disabled = false;
       document.timer.elements[2].disabled = false;
       clearInterval(timer1);
+      document.timer.elements[0].value = '3';
+      document.timer.elements[1].value = '0';
     }
 
     function resetbutton() {
@@ -107,11 +103,19 @@
       document.timer.elements[0].value = '3';
       document.timer.elements[1].value = '0';
     }
+
   </script>
 
-
-
-
+<h2>音楽再生</h2>
+<form id="timer">
+  <input type="button" id="Musicbutton" value="再生" onclick="musicStart()">
+  <input type="button" id="Musicbutton" value="一時停止" onclick="musicStop()">
+  <input type="button" id="Musicbutton" value="停止" onclick="musicReset()">
+  <br>
+  <br>
+  <input type="button" id="MusicVolume" value="フィードイン" onclick="volumebig()">
+  <input type="button" id="MusicVolume" value="フィードアウト" onclick="volumesmall()">
+</form>
 
 
   <form name="myForm" id="myForm">
@@ -149,6 +153,8 @@
   </form>
 
 
+  
+
 
   <h2>メンバー</h2>
   <p>
@@ -171,13 +177,10 @@
     <div id="name"></div>
   </p>
 
-  <h2>順位</h2>
+  
   <div id="RANK"></div>
 
 
-
-
-  <h2>メモ</h2>
   <form name="f1">
     <textarea name="practice" cols="100" rows="10" onfocus="foc()">メモに使ってください</textarea>
   </form>

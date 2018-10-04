@@ -4,9 +4,70 @@ const dice = document.getElementById('dice');
 function diceButton() {
   const bignumber = document.getElementById('bignumber').value;
   const random1 = Math.floor(Math.random() * bignumber + 1);
-    dice.innerHTML = random1;
+  dice.innerHTML = random1;
 };
 
+
+//音楽再生
+var whatmusic = true;
+
+const timerMusic = new Audio();
+var audioArr = new Array(
+  "audio/1.mp3",
+  "audio/2.mp3",
+  "audio/3.mp3",
+  "audio/4.mp3",
+  "audio/5.mp3",
+  "audio/6.mp3",
+  "audio/7.mp3",
+  "audio/8.mp3",
+  "audio/9.mp3",
+  "audio/10.mp3",
+);
+
+function musicStart() {
+  playAudio();
+}
+
+function playAudio() {
+  timerMusic.volume = 0.2;
+  timerMusic.loop = true;
+  if (whatmusic == true) {
+    whatmusic = true;
+    const random2 = Math.floor(Math.random() * audioArr.length);
+    timerMusic.src = audioArr[random2];
+    timerMusic.play();
+  } else {
+    timerMusic.play();
+  }
+}
+
+function musicStop() {
+  whatmusic = false;
+  timerMusic.pause();
+}
+
+function musicReset() {
+  whatmusic = true;
+  timerMusic.pause();
+  timerMusic.currentTime = 0;
+}
+
+//音量
+function volumebig() {
+  var vl = timerMusic.volume;
+  if (vl < 1.0) {
+    timerMusic.volume = Math.ceil((vl + 0.1)* 10)/ 10;
+    setTimeout("fadein()",200);
+  }
+}
+function volumesmall() {
+  var vl = timerMusic.volume;
+  if (vl > 0) {
+    timerMusic.volume = Math.floor((vl - 0.1)* 10)/ 10;
+    setTimeout("fadein()",200);
+  }
+}
 
 
 
@@ -29,10 +90,10 @@ function myCalculate(myData) {
     myTotal = eval(myWork);
     myInput = "";
     document.myForm.myLine.value = myTotal;
-//  }
-//  if (myData == "=") {
-//    myTotal = 0;
-//    myCalc = "+";
+    //  }
+    //  if (myData == "=") {
+    //    myTotal = 0;
+    //    myCalc = "+";
   } else {
     myCalc = myData;
   }
