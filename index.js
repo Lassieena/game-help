@@ -57,14 +57,14 @@ function musicReset() {
 function volumebig() {
   var vl = timerMusic.volume;
   if (vl < 1.0) {
-    timerMusic.volume = Math.ceil((vl + 0.1)* 10)/ 10;
+    timerMusic.volume = Math.round((vl + 0.1)* 10)/ 10;
     setTimeout("fadein()",200);
   }
 }
 function volumesmall() {
   var vl = timerMusic.volume;
   if (vl > 0) {
-    timerMusic.volume = Math.floor((vl - 0.1)* 10)/ 10;
+    timerMusic.volume = Math.round((vl - 0.1)* 10)/ 10;
     setTimeout("fadein()",200);
   }
 }
@@ -90,10 +90,10 @@ function myCalculate(myData) {
     myTotal = eval(myWork);
     myInput = "";
     document.myForm.myLine.value = myTotal;
-    //  }
-    //  if (myData == "=") {
-    //    myTotal = 0;
-    //    myCalc = "+";
+      }
+      if (myData == "=") {
+        myTotal = 0;
+        myCalc = "+";
   } else {
     myCalc = myData;
   }
@@ -127,27 +127,27 @@ function selectboxChange() {
   const selindex = target.selectedIndex;
   const RANK = document.getElementById('RANK');
 
-  const MeMo = '<textarea cols="100" rows="2"></textarea>';
-  const one = '<p>プレイヤー1<input  type="text"></p>' + MeMo;
-  const two = '<p>プレイヤー2<input  type="text"></p>' + MeMo;
-  const three = '<p>プレイヤー3<input  type="text"></p>' + MeMo;
-  const four = '<p>プレイヤー4<input  type="text"></p>' + MeMo;
-  const five = '<p>プレイヤー5<input  type="text"></p>' + MeMo;
-  const six = '<p>プレイヤー6<input  type="text"></p>' + MeMo;
-  const seven = '<p>プレイヤー7<input  type="text"></p>' + MeMo;
-  const eight = '<p>プレイヤー8<input  type="text"></p>' + MeMo;
-  const nine = '<p>プレイヤー9<input  type="text"></p>' + MeMo;
-  const ten = '<p>プレイヤー10<input type="text"></p>' + MeMo;
-  const Rone = '<p>1位<input type="text"></p>';
-  const Rtwo = '<p>2位<input type="text"></p>';
-  const Rthree = '<p>3位<input type="text"></p>';
-  const Rfour = '<p>4位<input type="text"></p>';
-  const Rfive = '<p>5位<input type="text"></p>';
-  const Rsix = '<p>6位<input type="text"></p>';
-  const Rseven = '<p>7位<input type="text"></p>';
-  const Reight = '<p>8位<input type="text"></p>';
-  const Rnine = '<p>9位<input type="text"></p>';
-  const Rten = '<p>10位<input type="text"></p>';
+  const MeMo = '<textarea cols="100" rows="2" id="playerMemo"></textarea>';
+  const one = '<p>プレイヤー1<input  type="text" id="Players"></p>' + MeMo;
+  const two = '<p>プレイヤー2<input  type="text" id="Players"></p>' + MeMo;
+  const three = '<p>プレイヤー3<input  type="text" id="Players"></p>' + MeMo;
+  const four = '<p>プレイヤー4<input  type="text" id="Players"></p>' + MeMo;
+  const five = '<p>プレイヤー5<input  type="text" id="Players"></p>' + MeMo;
+  const six = '<p>プレイヤー6<input  type="text" id="Players"></p>' + MeMo;
+  const seven = '<p>プレイヤー7<input  type="text" id="Players"></p>' + MeMo;
+  const eight = '<p>プレイヤー8<input  type="text" id="Players"></p>' + MeMo;
+  const nine = '<p>プレイヤー9<input  type="text" id="Players"></p>' + MeMo;
+  const ten = '<p>プレイヤー10<input type="text" id="Players"></p>' + MeMo;
+  const Rone = '<p>1位<input type="text" id="Players"></p>';
+  const Rtwo = '<p>2位<input type="text" id="Players"></p>';
+  const Rthree = '<p>3位<input type="text" id="Players"></p>';
+  const Rfour = '<p>4位<input type="text" id="Players"></p>';
+  const Rfive = '<p>5位<input type="text" id="Players"></p>';
+  const Rsix = '<p>6位<input type="text" id="Players"></p>';
+  const Rseven = '<p>7位<input type="text" id="Players"></p>';
+  const Reight = '<p>8位<input type="text" id="Players"></p>';
+  const Rnine = '<p>9位<input type="text" id="Players"></p>';
+  const Rten = '<p>10位<input type="text" id="Players"></p>';
 
   switch (selindex) {
     case 1:

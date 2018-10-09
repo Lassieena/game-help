@@ -15,7 +15,8 @@ body {
 #gamename {
   width: 500px;
   height: 45px;
-  font-size: 35px;
+  font-size: 40px;
+  font-weight: 550;
 }
 
 #DICE {
@@ -205,3 +206,22 @@ table {
   /*グラデーションを明るく*/
 }
 
+
+#target {
+  width: 60px;
+  height: 50px;
+  font-size: 25px;
+  text-align: right;
+}
+
+#playerMemo {
+  width: 700px;
+  height: 70px;
+  font-size: 15px;
+}
+
+#Players {
+  width: 300px;
+  height: 25px;
+  font-size: 20px;
+}
