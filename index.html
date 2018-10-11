@@ -156,10 +156,11 @@
     </form>
   </div>
 
-<div id="play123">
+  <br>
+  <div id="play123">
     <h2>メンバー</h2>
-    <p>
-      <form name="form1" action="">
+    <form name="form1" id="play234">
+      <p>
         何人プレイ？
         <select id="target" onchange="selectboxChange();">
           <option value="0">--</option>
@@ -174,10 +175,14 @@
           <option value="9">9</option>
           <option value="10">10</option>
         </select>
-      </form>
-      <div id="name"></div>
-    </p>
+      </p>
+    </form>
+    <div id="nameRank">
+    <div id="name"></div>
+    <br>
     <div id="RANK"></div>
+  </div>
+    <br><br>
     <form name="f1">
       <textarea name="practice" cols="100" rows="10" onfocus="foc()">メモに使ってください</textarea>
     </form>
