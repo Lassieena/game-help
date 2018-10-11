@@ -14,13 +14,12 @@
 
 
 
-
-
-  <h2>ランダム数字</h2>
-  <input type="number" id="bignumber" value="6" max="1000" min="1">
-  <button id="DICE" onclick="diceButton();"></button><br>
+  <h2>ランダム数字
+    <input type="number" id="bignumber" value="6" max="1000" min="1">
+    <button id="DICE" onclick="diceButton();"></button><br>
+  </h2>
   <div id="dice"></div>
-  <p>ランダム数字は最小が1です。<br>最大は1000まで変えられるよ！</p>
+  <p>ランダム数字の最小は1です。最大は好きに変えられます。</p>
 
 
 
@@ -31,8 +30,7 @@
     <input type="button" id="timerbutton" value="スタート" onclick="cntStart()">
     <input type="button" id="timerbutton" value="ストップ" onclick="cntStop()">
     <input type="button" id="timerbutton" value="リセット" onclick="resetbutton()">
-  </form> 
-  
+  </form>
   <script>
     var timer1;
 
@@ -107,86 +105,83 @@
 
   </script>
 
-<h2>音楽再生</h2>
-<form id="timer">
-  <input type="button" id="Musicbutton" value="再生" onclick="musicStart()">
-  <input type="button" id="Musicbutton" value="一時停止" onclick="musicStop()">
-  <input type="button" id="Musicbutton" value="停止" onclick="musicReset()">
   <br>
-  <br>
-  <input type="button" id="MusicVolume" value="フィードイン" onclick="volumebig()">
-  <input type="button" id="MusicVolume" value="フィードアウト" onclick="volumesmall()">
-</form>
-
-
-  <form name="myForm" id="myForm">
-    <h2>電卓</h2>
-    <table>
-      <tr>
-        <td colspan="3"><input type="text" size="10" name="myLine" id="dentacusuuji" onclick="mytextbox()"></td>
-        <td><input type="button" id="dentacunamber" value="clr" onclick="myC()"></td>
-      </tr>
-      <tr>
-        <td><input type="button" id="dentacunamber" value="7" onclick="myValue(7)"></td>
-        <td><input type="button" id="dentacunamber" value="8" onclick="myValue(8)"></td>
-        <td><input type="button" id="dentacunamber" value="9" onclick="myValue(9)"></td>
-        <td><input type="button" id="dentacunamber" value="÷" onclick="myCalculate('/')"></td>
-      </tr>
-      <tr>
-        <td><input type="button" id="dentacunamber" value="4" onclick="myValue(4)"></td>
-        <td><input type="button" id="dentacunamber" value="5" onclick="myValue(5)"></td>
-        <td><input type="button" id="dentacunamber" value="6" onclick="myValue(6)"></td>
-        <td><input type="button" id="dentacunamber" value="×" onclick="myCalculate('*')"></td>
-      </tr>
-      <tr>
-        <td><input type="button" id="dentacunamber" value="1" onclick="myValue(1)"></td>
-        <td><input type="button" id="dentacunamber" value="2" onclick="myValue(2)"></td>
-        <td><input type="button" id="dentacunamber" value="3" onclick="myValue(3)"></td>
-        <td><input type="button" id="dentacunamber" value="-" onclick="myCalculate('-')"></td>
-      </tr>
-      <tr>
-        <td><input type="button" id="dentacunamber" value="0" onclick="myValue(0)"></td>
-        <td><input type="button" id="dentacunamber" value="." onclick="myValue('.')"></td>
-        <td><input type="button" id="dentacunamber" value="+" onclick="myCalculate('+')"></td>
-        <td><input type="button" id="dentacunamber" value="=" onclick="myCalculate('=')"></td>
-      </tr>
-    </table>
+  <h2>音楽再生</h2>
+  <form id="timer">
+    <input type="button" id="Musicbutton" value="再生" onclick="musicStart()">
+    <input type="button" id="Musicbutton" value="一時停止" onclick="musicStop()">
+    <input type="button" id="Musicbutton" value="停止" onclick="musicReset()">
+    <br>
+    <br>
+    <input type="button" id="MusicVolume" value="フィードイン" onclick="volumebig()">
+    <input type="button" id="MusicVolume" value="フィードアウト" onclick="volumesmall()">
   </form>
 
 
-  
 
 
-  <h2>メンバー</h2>
-  <p>
-    <form name="form1" action="">
-      何人プレイ？
-      <select id="target" onchange="selectboxChange();">
-        <option value="0">--</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-      </select>
+  <div id="dentacu123">
+    <form name="myForm" id="myForm">
+      <h2>電卓</h2>
+      <table>
+        <tr>
+          <td colspan="3"><input type="text" size="10" name="myLine" id="dentacusuuji" onclick="mytextbox()"></td>
+          <td><input type="button" id="dentacunamber" value="clr" onclick="myC()"></td>
+        </tr>
+        <tr>
+          <td><input type="button" id="dentacunamber" value="7" onclick="myValue(7)"></td>
+          <td><input type="button" id="dentacunamber" value="8" onclick="myValue(8)"></td>
+          <td><input type="button" id="dentacunamber" value="9" onclick="myValue(9)"></td>
+          <td><input type="button" id="dentacunamber" value="÷" onclick="myCalculate('/')"></td>
+        </tr>
+        <tr>
+          <td><input type="button" id="dentacunamber" value="4" onclick="myValue(4)"></td>
+          <td><input type="button" id="dentacunamber" value="5" onclick="myValue(5)"></td>
+          <td><input type="button" id="dentacunamber" value="6" onclick="myValue(6)"></td>
+          <td><input type="button" id="dentacunamber" value="×" onclick="myCalculate('*')"></td>
+        </tr>
+        <tr>
+          <td><input type="button" id="dentacunamber" value="1" onclick="myValue(1)"></td>
+          <td><input type="button" id="dentacunamber" value="2" onclick="myValue(2)"></td>
+          <td><input type="button" id="dentacunamber" value="3" onclick="myValue(3)"></td>
+          <td><input type="button" id="dentacunamber" value="-" onclick="myCalculate('-')"></td>
+        </tr>
+        <tr>
+          <td><input type="button" id="dentacunamber" value="0" onclick="myValue(0)"></td>
+          <td><input type="button" id="dentacunamber" value="." onclick="myValue('.')"></td>
+          <td><input type="button" id="dentacunamber" value="+" onclick="myCalculate('+')"></td>
+          <td><input type="button" id="dentacunamber" value="=" onclick="myCalculate('=')"></td>
+        </tr>
+      </table>
     </form>
-    <div id="name"></div>
-  </p>
+  </div>
 
-  
-  <div id="RANK"></div>
-
-
-  <form name="f1">
-    <textarea name="practice" cols="100" rows="10" onfocus="foc()">メモに使ってください</textarea>
-  </form>
-
-
+<div id="play123">
+    <h2>メンバー</h2>
+    <p>
+      <form name="form1" action="">
+        何人プレイ？
+        <select id="target" onchange="selectboxChange();">
+          <option value="0">--</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </form>
+      <div id="name"></div>
+    </p>
+    <div id="RANK"></div>
+    <form name="f1">
+      <textarea name="practice" cols="100" rows="10" onfocus="foc()">メモに使ってください</textarea>
+    </form>
+  </div>
 
 
   <script src="index.js"></script>
